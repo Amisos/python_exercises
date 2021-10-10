@@ -86,6 +86,23 @@ all_stocks=all_stocks[all_stocks["Google"].notna() & all_stocks["Apple"].notna()
 
 print("------------------------------------")
 print(all_stocks)
+#%%
+
+
+# Print the average stock price for each stock
+# Print the median stock price for each stock
+# Print the standard deviation of the stock price for each stock  
+
+
+print(all_stocks.agg(
+    {
+        "Google":["mean","std","median"],
+        "Apple":["mean","std","median"],
+        "Amazon":["mean","std","median"],
+    }               ))
+                  
+# Print the correlation between stocks
+print("correlation:\n",all_stocks.corr())
 
 #%%
 
